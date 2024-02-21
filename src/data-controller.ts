@@ -10,11 +10,39 @@ function generateProductHTML(product: Product): string {
 }
 
 function renderProducts(prods: Product[]): void {
-    // your code
+    
+    //get the main container
+    const mainContainer = document.getElementById("main-container");
+
+    //make sure mainContainer was found
+    if (!mainContainer) {
+        console.error("Main container not found");
+        return;
+    }
+
+    //clear previous products
+    mainContainer.innerHTML = ""; 
+
+    //go through products
+    for (let prod of prods) {
+        //use generateProductHTML to generate the product
+        const productHTML = generateProductHTML(prod);
+        //add the html recieved from generateProductHTML to main container
+        mainContainer.innerHTML += productHTML;
+    }
 }
 
 function getByCategory(category: string): void {
     // your code
+    const rendProd = [];
+    for (let i = 0; i < products.length; i++)
+    {
+        if(products[i].category == category)
+        {
+            rendProd.push(products[i]);
+        }
+    }
+    renderProducts(rendProd);
 }
 
 function getByRating(minRating: number): void {
