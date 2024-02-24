@@ -34,19 +34,23 @@ function renderProducts(prods: Product[]): void {
 
 function getByCategory(category: string): void {
     // your code
-    const rendProd = [];
+    /* const rendProd = [];
     for (let i = 0; i < products.length; i++)
     {
         if(products[i].category == category)
         {
             rendProd.push(products[i]);
         }
-    }
-    renderProducts(rendProd);
+    } */
+    const selectedProducts = products.filter(product => product.category === category);
+    renderProducts(selectedProducts);
 }
 
 function getByRating(minRating: number): void {
-    // your code
+    //Filter products based on the minimum rating
+    const selectedProducts = products.filter(product => product.rating > minRating);
+    //Render the selected products
+    renderProducts(selectedProducts);
 }
 
 export { renderProducts, getByCategory, getByRating };
