@@ -19,29 +19,22 @@ function renderProducts(prods: Product[]): void {
         console.error("Main container not found");
         return;
     }
-
-    //clear previous products
-    mainContainer.innerHTML = ""; 
+    // Initialize an empty string to accumulate HTML
+    let productsHTML = "";
 
     //go through products
     for (let prod of prods) {
         //use generateProductHTML to generate the product
         const productHTML = generateProductHTML(prod);
-        //add the html recieved from generateProductHTML to main container
-        mainContainer.innerHTML += productHTML;
+        //add the html received from generateProductHTML to the accumulated string
+        productsHTML += productHTML;
     }
+
+    // Set the innerHTML of the main container with the accumulated HTML
+    mainContainer.innerHTML = productsHTML;
 }
 
 function getByCategory(category: string): void {
-    // your code
-    /* const rendProd = [];
-    for (let i = 0; i < products.length; i++)
-    {
-        if(products[i].category == category)
-        {
-            rendProd.push(products[i]);
-        }
-    } */
     const selectedProducts = products.filter(product => product.category === category);
     renderProducts(selectedProducts);
 }

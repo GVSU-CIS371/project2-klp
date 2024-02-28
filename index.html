@@ -9,8 +9,6 @@
 </head>
 
 <body>
-
-
   <div id="app">
     <header>
       <h1>My Store</h1>
@@ -32,16 +30,13 @@
         // Bind click events using .addEventListener to the navigation links. Upon clicking:
 
         // - "Electronics" should display all products categorized as "Electronics."
-        document.getElementById("electronics").addEventListener("click",getByCategory("electronics"))
+        document.getElementById("electronics").addEventListener("click", () => getByCategory("Electronics"))
         // - "Clothing" should display all products categorized as "Clothing."
-        document.getElementById("clothing").addEventListener("click",getByCategory("clothing"))
+        document.getElementById("clothing").addEventListener("click", () => getByCategory("Clothing"))
         // - "Groceries" should display all products categorized as "Groceries."
-        document.getElementById("groceries").addEventListener("click",getByCategory("groceries"))
+        document.getElementById("groceries").addEventListener("click", () => getByCategory("Groceries"))
         // - "Best Seller" should display all products with a rating greater than 4.5.
-        document.getElementById("bestSeller").addEventListener("click",getByRating(5))
-
-        
-        // your code
+        document.getElementById("bestSeller").addEventListener("click", () => getByRating(4.5))
       </script>
     </main>
     <footer>
